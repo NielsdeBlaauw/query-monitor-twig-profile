@@ -7,6 +7,11 @@
 
 namespace NdB\QM_Twig_Profile;
 
+use QM_Collectors;
+use Twig\Environment;
+use Twig\Extension\ProfilerExtension;
+use Twig\Profiler\Profile;
+
 /**
  * Adds our profile collector to Query Monitor.
  *
@@ -38,3 +43,20 @@ function render( array $output ) {
 
 add_filter( 'qm/outputter/html', 'NdB\QM_Twig_Profile\render' );
 
+/**
+ * Automatically collects twig profiles from timber.
+ *
+ * @param \Twig\Environment $twig Timbers twig instance.
+ * @return \Twig\Environment
+ */
+function collect_timber( Environment $twig ):Environment {
+	$profile = new Profile();
+	$twig->addExtension( new ProfilerExtension( $profile ) );
+	$collector = QM_Collectors::get( 'twig_profile' );
+	if ( $collector instanceof Collector ) {
+		$collector->add( $profile );
+	}
+	return $twig;
+}
+
+add_filter( 'timber/twig', 'NdB\QM_Twig_Profile\collect_timber' );
