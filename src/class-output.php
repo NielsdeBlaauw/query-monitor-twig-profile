@@ -51,13 +51,23 @@ final class Output extends QM_Output_Html {
 				<h2><?php echo esc_html__( 'Twig profile', 'ndb_qm_twig' ); ?></h2>
 			</div>
 			<?php
-			foreach ( $profiles as $profile ) {
+			if ( empty( $profiles ) ) {
 				echo '<div class="qm-boxed">';
 				echo '<section>';
-				$dumper = new HtmlDumper();
-				echo wp_kses( $dumper->dump( $profile ), wp_kses_allowed_html( 'post' ) );
+				?>
+				<p><?php echo esc_html__( 'No twig profiles on this page :)', 'ndb_qm_twig' ); ?></p>
+				<?php
 				echo '</section>';
 				echo '</div>';
+			} else {
+				foreach ( $profiles as $profile ) {
+					echo '<div class="qm-boxed">';
+					echo '<section>';
+					$dumper = new HtmlDumper();
+					echo wp_kses( $dumper->dump( $profile ), wp_kses_allowed_html( 'post' ) );
+					echo '</section>';
+					echo '</div>';
+				}
 			}
 			?>
 		</div>

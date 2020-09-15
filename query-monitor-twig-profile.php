@@ -1,6 +1,13 @@
 <?php
 /**
- * Plugin Name: Query monitor Twig profile
+ * Plugin Name:  Query monitor Twig profile
+ * Description:  Displays Twig profiler output in Query Monitor. Automatically works with Timber.
+ * Version:      1.0.0
+ * Plugin URI:   https://github.com/NielsdeBlaauw/query-monitor-twig-profile
+ * Author:       Niels de Blaauw
+ * Author URI:   https://actd.nl/
+ * Text Domain:  ndb_qm_twig
+ * Requires PHP: 7.2.0
  *
  * @package NdB\QM_Twig_Profile
  */
