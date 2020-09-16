@@ -16,14 +16,14 @@ final class Collector extends \QM_Collector {
 	/**
 	 * Query monitor ID, used for the panel ID.
 	 *
-	 * @var $id
+	 * @var string $id
 	 */
 	public $id = 'twig_profile';
 
 	/**
 	 * Store of Twig profile objects.
 	 *
-	 * @var $profiles
+	 * @var array<int, \Twig\Profiler\Profile> $profiles
 	 */
 	private $profiles = array();
 
