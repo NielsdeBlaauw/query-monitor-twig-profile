@@ -37,7 +37,7 @@ final class Output extends QM_Output_Html {
 	/**
 	 * Renders the panel.
 	 *
-	 * @return string
+	 * @return void
 	 */
 	public function output() {
 		$collector = $this->collector;
