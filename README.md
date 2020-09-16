@@ -32,3 +32,13 @@ if ( $collector instanceof \NdB\QM_Twig_Profile\Collector ) {
 	$collector->add( $profile );
 }
 ```
+
+## Development
+
+Test the GitHub Actions workflow with [act](https://github.com/nektos/act):
+
+See the documentation for the [setup-php action](https://github.com/marketplace/actions/setup-php-action#local-testing-setup)
+
+```shell
+act -P ubuntu-latest=shivammathur/node:latest
+```
