@@ -22,8 +22,8 @@ use Twig\Profiler\Profile;
 /**
  * Adds our profile collector to Query Monitor.
  *
- * @param array $collectors Query Monitors collectors.
- * @return \QM_Collectors[]
+ * @param array<string, \QM_Collector> $collectors Query Monitors collectors.
+ * @return array<string, \QM_Collector>
  */
 function register_collector( array $collectors ) {
 	require_once __DIR__ . '/src/class-collector.php';
@@ -36,8 +36,8 @@ add_filter( 'qm/collectors', 'NdB\QM_Twig_Profile\register_collector', 20, 1 );
 /**
  * Renders the twig profile query monitor panel.
  *
- * @param array $output Query monitors prepared output.
- * @return \QM_Output[]
+ * @param array<string, \QM_Output> $output Query monitors prepared output.
+ * @return array<string, \QM_Output>
  */
 function render( array $output ) {
 	$collector = \QM_Collectors::get( 'twig_profile' );
