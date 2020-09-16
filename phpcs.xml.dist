@@ -8,4 +8,8 @@
     <arg name="colors"/>
 
     <rule ref="WordPress" />
+    
+    <rule ref="PHPCompatibility"/>
+    <config name="testVersion" value="7.0-"/>
+
 </ruleset>
