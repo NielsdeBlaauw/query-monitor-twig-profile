@@ -31,6 +31,7 @@ final class Collector extends \QM_Collector {
 	 * Add a twig profile to the store.
 	 *
 	 * @param \Twig\Profiler\Profile $profile A twig profile.
+	 * @return void
 	 */
 	public function add( Profile $profile ) {
 		$this->profiles[] = $profile;
@@ -39,7 +40,7 @@ final class Collector extends \QM_Collector {
 	/**
 	 *  Retrieves all profiles in the store.
 	 *
-	 * @return \Twig\Profiler\Profile[]
+	 * @return array<int, \Twig\Profiler\Profile>
 	 */
 	public function get_all() {
 		return $this->profiles;
