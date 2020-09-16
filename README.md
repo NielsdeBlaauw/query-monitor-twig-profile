@@ -12,7 +12,7 @@ Automatically integrates with Timber.
 ## Installation
 1. Install the plugin.
 2. Activate it.
-3. Check the \'Twig profile\' tab in Query Monitor.
+3. Check the 'Twig profile' tab in Query Monitor.
 4. Optimize your site.
 
 ## Frequently Asked Questions
@@ -20,10 +20,10 @@ Automatically integrates with Timber.
 Definitely. Just add a twig profiler extension to your twig instance and submit it to the collector.
 
 ```
-$profile = new Profile();
-$twig->addExtension( new ProfilerExtension( $profile ) );
-$collector = QM_Collectors::get( \'twig_profile\' );
-if ( $collector instanceof Collector ) {
+$profile = new \Twig\Profiler\Profile();
+$twig->addExtension( new \Twig\Extension\ProfilerExtension( $profile ) );
+$collector = \QM_Collectors::get( 'twig_profile' );
+if ( $collector instanceof \NdB\QM_Twig_Profile\Collector ) {
 	$collector->add( $profile );
 }
 ```
