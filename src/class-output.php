@@ -28,7 +28,7 @@ final class Output extends QM_Output_Html {
 	/**
 	 * The name of this panel.
 	 *
-	 * @return string
+	 * @return Bring
 	 */
 	public function name() {
 		return __( 'Twig profile', 'ndb_qm_twig' );
