@@ -20,6 +20,6 @@ jobs:
     - name: Composer install
       run: composer install
     - name: PHPStan
-      run: vendor/bin/phpstan analyse --error-format=checkstyle | cs2pr
+      run: vendor/bin/phpstan analyse
     - name: PHPCS
       run: vendor/bin/phpcs --report=checkstyle | cs2pr
