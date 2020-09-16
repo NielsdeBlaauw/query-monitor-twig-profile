@@ -9,3 +9,5 @@ parameters:
     paths:
         - query-monitor-twig-profile.php
         - src/
+    ignoreErrors:
+    - '# with no value type specified in iterable type Twig\\Profiler\\Profile\.#'
