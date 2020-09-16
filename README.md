@@ -19,7 +19,7 @@ Automatically integrates with Timber.
 ### Can I use it with other frameworks that use twig?
 Definitely. Just add a twig profiler extension to your twig instance and submit it to the collector.
 
-```
+```php
 $profile = new \Twig\Profiler\Profile();
 $twig->addExtension( new \Twig\Extension\ProfilerExtension( $profile ) );
 $collector = \QM_Collectors::get( 'twig_profile' );
