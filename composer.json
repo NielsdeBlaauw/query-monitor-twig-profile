@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
+        "php": ">=7.0"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "^2.3",
