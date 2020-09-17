@@ -34,6 +34,12 @@ if ( $collector instanceof Collector ) {
 }
 ```
 
+= Privacy Statement =
+Query Monitor Twig Profile is private by default and always will be. It does not persistently store any of the data that it collects. It does not send data to any third party, nor does it include any third party resources.
+
+== Screenshots ==
+1. The Twig profile tab in Query Monitor (light mode)
+
 == Changelog ==
 1.0.0:
 * Initial release
