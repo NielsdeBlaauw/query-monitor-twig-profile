@@ -4,7 +4,7 @@ Tags: timber, twig, query monitor, performance, profile, speed, template, theme
 Requires at least: 4.9.0
 Tested up to: 5.5.1
 Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
