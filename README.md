@@ -3,7 +3,7 @@
 Displays [Twig](https://twig.symfony.com/) profiler output in [Query Monitor](https://github.com/johnbillion/query-monitor).
 Automatically works with [Timber](https://github.com/timber/timber).
 
-![Screenshot showing the Twig Profile panel for Query Monitor](assets/screenshot-1.png)
+![Screenshot showing the Twig Profile panel for Query Monitor](.wordpress-org/screenshot-1.png)
 
 ## Description
 
