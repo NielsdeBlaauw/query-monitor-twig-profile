@@ -8,7 +8,7 @@ Stable tag: 1.0.1
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
-Displays Twig profiler output in Query Monitor. Automatically works with Timber.
+Displays Twig profiler output in Query Monitor.
 
 == Description ==
 Find out which pages are slow, and why! Immediately see profiling information from twig in your Query Monitor toolbar. 
