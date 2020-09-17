@@ -3,8 +3,8 @@ Contributors: nielsdeblaauw
 Tags: timber, twig, query monitor, performance, profile, speed, template, theme
 Requires at least: 4.9.0
 Tested up to: 5.5.1
-Requires PHP: 7.2
-Stable tag: 1.0.0
+Requires PHP: 7.0
+Stable tag: 1.0.1
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
@@ -41,5 +41,12 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 1. The Twig profile tab in Query Monitor (light mode)
 
 == Changelog ==
+1.0.1
+* Adds automated releases from GitHub.
+* Improves readme.
+* Fixes several type hints.
+* Adds CI checks (phpstan, phpcs, phpcompat, composer validate).
+* Defines required PHP version as >7.0.
+
 1.0.0:
-* Initial release
+* Initial release.
