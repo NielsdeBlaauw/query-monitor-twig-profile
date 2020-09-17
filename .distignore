@@ -3,6 +3,7 @@
 /.github
 /node_modules
 /vendor
+/README.md
 
 .distignore
 .gitignore
