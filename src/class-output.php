@@ -8,7 +8,7 @@
 namespace NdB\QM_Twig_Profile;
 
 use QM_Output_Html;
-use Twig\Profiler\Dumper\HtmlDumper;
+use Twig\Profiler\Dumper\Dumper;
 
 /**
  * Formats the output data for a QM panel.
@@ -60,10 +60,11 @@ final class Output extends QM_Output_Html {
 				echo '</section>';
 				echo '</div>';
 			} else {
+				require_once 'class-dumper.php';
 				foreach ( $profiles as $profile ) {
 					echo '<div class="qm-boxed">';
 					echo '<section>';
-					$dumper = new HtmlDumper();
+					$dumper = new Dumper();
 					echo wp_kses( $dumper->dump( $profile ), wp_kses_allowed_html( 'post' ) );
 					echo '</section>';
 					echo '</div>';
