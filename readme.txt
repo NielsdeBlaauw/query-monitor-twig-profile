@@ -39,8 +39,12 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 
 == Screenshots ==
 1. The Twig profile tab in Query Monitor (light mode)
+2. The Twig profile tab in Query Monitor (dark mode)
 
 == Changelog ==
+next
+* Support for dark mode.
+
 1.0.3
 * Removes assets release library.
 * Uses readme.txt file.
