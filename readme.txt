@@ -4,7 +4,7 @@ Tags: timber, twig, query monitor, performance, profile, speed, template, theme
 Requires at least: 4.9.0
 Tested up to: 5.5.1
 Requires PHP: 7.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
@@ -26,10 +26,10 @@ Automatically integrates with Timber.
 Definitely. Just add a twig profiler extension to your twig instance and submit it to the collector.
 
 ```
-$profile = new Profile();
-$twig->addExtension( new ProfilerExtension( $profile ) );
-$collector = QM_Collectors::get( \'twig_profile\' );
-if ( $collector instanceof Collector ) {
+$profile = new \Twig\Profiler\Profile();
+$twig->addExtension( new \Twig\Extension\ProfilerExtension( $profile ) );
+$collector = \QM_Collectors::get( 'twig_profile' );
+if ( $collector instanceof \NdB\QM_Twig_Profile\Collector ) {
 	$collector->add( $profile );
 }
 ```
@@ -41,6 +41,13 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 1. The Twig profile tab in Query Monitor (light mode)
 
 == Changelog ==
+1.0.3
+* Removes assets release library.
+* Uses readme.txt file.
+
+1.0.2
+* Fixes readme.
+
 1.0.1
 * Adds automated releases from GitHub.
 * Improves readme.
