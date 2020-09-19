@@ -23,24 +23,24 @@ final class Collector extends \QM_Collector {
 	/**
 	 * Store of Twig profile objects.
 	 *
-	 * @var array<int, \Twig\Profiler\Profile> $profiles
+	 * @var array<int, Environment_Profile> $profiles
 	 */
 	private $profiles = array();
 
 	/**
 	 * Add a twig profile to the store.
 	 *
-	 * @param \Twig\Profiler\Profile $profile A twig profile.
+	 * @param Environment_Profile $profile A twig profile.
 	 * @return void
 	 */
-	public function add( Profile $profile ) {
+	public function add( Environment_Profile $profile ) {
 		$this->profiles[] = $profile;
 	}
 
 	/**
 	 *  Retrieves all profiles in the store.
 	 *
-	 * @return array<int, \Twig\Profiler\Profile>
+	 * @return array<int, Environment_Profile>
 	 */
 	public function get_all() {
 		return $this->profiles;

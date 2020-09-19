@@ -44,6 +44,7 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 == Changelog ==
 next
 * Support for dark mode.
+* Support direct links to the templates in the editor.
 
 1.0.3
 * Removes assets release library.
