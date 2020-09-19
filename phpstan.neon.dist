@@ -10,4 +10,4 @@ parameters:
         - query-monitor-twig-profile.php
         - src/
     ignoreErrors:
-    - '# with no value type specified in iterable type Twig\\Profiler\\Profile\.#'
+    - '# no value type specified in iterable type Twig\\Profiler\\Profile\.#'

@@ -27,6 +27,7 @@ use Twig\Profiler\Profile;
  */
 function register_collector( array $collectors ) {
 	require_once __DIR__ . '/src/class-collector.php';
+	require_once __DIR__ . '/src/class-environment-profile.php';
 	$collectors['twig_profile'] = new Collector();
 	return $collectors;
 }
@@ -57,11 +58,12 @@ add_filter( 'qm/outputter/html', 'NdB\QM_Twig_Profile\render' );
  * @return \Twig\Environment
  */
 function collect_timber( Environment $twig ):Environment {
-	$profile = new Profile();
+	$profile             = new Profile();
+	$environment_profile = new Environment_Profile( $twig, $profile );
 	$twig->addExtension( new ProfilerExtension( $profile ) );
 	$collector = QM_Collectors::get( 'twig_profile' );
 	if ( $collector instanceof Collector ) {
-		$collector->add( $profile );
+		$collector->add( $environment_profile );
 	}
 	return $twig;
 }

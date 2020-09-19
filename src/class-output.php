@@ -14,6 +14,14 @@ use Twig\Profiler\Dumper\Dumper;
  * Formats the output data for a QM panel.
  */
 final class Output extends QM_Output_Html {
+	const EDITOR_PROTOCOLS = array(
+		'phpstorm',
+		'vscode',
+		'atom',
+		'subl',
+		'txmt',
+		'nbopen',
+	);
 
 	/**
 	 * Adds the twig profile panel to the menu.
@@ -44,14 +52,14 @@ final class Output extends QM_Output_Html {
 		if ( ! $collector instanceof Collector ) {
 			return;
 		}
-		$profiles = $collector->get_all();
+		$environment_profiles = $collector->get_all();
 		?>
 		<div class="qm qm-non-tabular" id="qm-twig_profile">
 			<div class='qm-boxed'>
 				<h2><?php echo esc_html__( 'Twig profile', 'ndb_qm_twig' ); ?></h2>
 			</div>
 			<?php
-			if ( empty( $profiles ) ) {
+			if ( empty( $environment_profiles ) ) {
 				echo '<div class="qm-boxed">';
 				echo '<section>';
 				?>
@@ -61,11 +69,11 @@ final class Output extends QM_Output_Html {
 				echo '</div>';
 			} else {
 				require_once 'class-dumper.php';
-				foreach ( $profiles as $profile ) {
+				foreach ( $environment_profiles as $environment_profile ) {
 					echo '<div class="qm-boxed">';
 					echo '<section>';
-					$dumper = new Dumper();
-					echo wp_kses( $dumper->dump( $profile ), wp_kses_allowed_html( 'post' ) );
+					$dumper = new Dumper( $environment_profile->environment->getLoader() );
+					echo wp_kses( $dumper->dump( $environment_profile->profile ), wp_kses_allowed_html( 'post' ), self::EDITOR_PROTOCOLS );
 					echo '</section>';
 					echo '</div>';
 				}
