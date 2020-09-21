@@ -32,7 +32,7 @@ function register_collector( array $collectors ) {
 	return $collectors;
 }
 
-add_filter( 'qm/collectors', 'NdB\QM_Twig_Profile\register_collector', 20, 1 );
+add_filter( 'qm/collectors', __NAMESPACE__ . '\\register_collector', 20, 1 );
 
 /**
  * Renders the twig profile query monitor panel.
@@ -49,7 +49,7 @@ function render( array $output ) {
 	return $output;
 }
 
-add_filter( 'qm/outputter/html', 'NdB\QM_Twig_Profile\render' );
+add_filter( 'qm/outputter/html', __NAMESPACE__ . '\\render' );
 
 /**
  * Automatically collects twig profiles from timber.
@@ -61,7 +61,7 @@ function collect_timber( Environment $twig ):Environment {
 	return collect( $twig );
 }
 
-add_filter( 'timber/twig', 'NdB\QM_Twig_Profile\collect_timber' );
+add_filter( 'timber/twig', __NAMESPACE__ . '\\collect_timber' );
 
 /**
  * Adds twig profile collection to a Twig instance.
