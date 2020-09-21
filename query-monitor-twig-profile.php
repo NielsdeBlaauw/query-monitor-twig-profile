@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Query monitor Twig profile
  * Description:  Displays Twig profiler output in Query Monitor. Automatically works with Timber.
- * Version:      1.0.3
+ * Version:      1.1.0
  * Plugin URI:   https://github.com/NielsdeBlaauw/query-monitor-twig-profile
  * Author:       Niels de Blaauw
  * Author URI:   https://actd.nl/

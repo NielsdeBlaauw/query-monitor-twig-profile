@@ -1,6 +1,9 @@
 # Query monitor Twig profile
 
+**Query Monitor Twig profile is available in the [WordPress plugin repository](https://wordpress.org/plugins/query-monitor-twig-profile/)**.
+
 Displays [Twig](https://twig.symfony.com/) profiler output in [Query Monitor](https://github.com/johnbillion/query-monitor).
+
 Automatically works with [Timber](https://github.com/timber/timber).
 
 ![Screenshot showing the Twig Profile panel for Query Monitor](.wordpress-org/screenshot-1.png)
@@ -11,6 +14,9 @@ Automatically works with [Timber](https://github.com/timber/timber).
 Find out which pages are slow, and why! Immediately see profiling information from Twig in your Query Monitor toolbar.
 
 Automatically integrates with Timber.
+
+- Support for dark mode.
+- Clickable links to profiled templates in your preferred editor.
 
 ## Installation
 

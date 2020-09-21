@@ -1,19 +1,26 @@
 === Query monitor Twig profile ===
 Contributors: nielsdeblaauw
-Tags: timber, twig, query monitor, performance, profile, speed, template, theme
+Tags: timber, twig, query monitor, performance, profile, speed, template, theme, developer, development, debug
 Requires at least: 4.9.0
 Tested up to: 5.5.1
 Requires PHP: 7.0
-Stable tag: 1.0.3
+Stable tag: 1.1.0
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
 Displays Twig profiler output in Query Monitor.
 
 == Description ==
-Find out which pages are slow, and why! Immediately see profiling information from twig in your Query Monitor toolbar. 
+Find out which pages are slow, and why! Immediately see profiling information from twig in your [Query Monitor](https://wordpress.org/plugins/query-monitor/) toolbar. 
+
+The Twig profile extension for Query Monitor helps you notice which templates are used on a page and where the time rendering the page is spent.
+
+Kind of like the ['What the file' plugin](https://wordpress.org/plugins/what-the-file/), but for Twig and with timing information.
 
 Automatically integrates with Timber.
+
+- Support for dark mode.
+- Clickable links to profiled templates in your preferred editor.
 
 == Installation ==
 1. Install the plugin.
@@ -21,15 +28,19 @@ Automatically integrates with Timber.
 3. Check the 'Twig profile' tab in Query Monitor.
 4. Speed up your site!
 
+Alternatively, you can use [wpackagist](https://wpackagist.org/search?q=query-monitor-twig-profile&type=plugin&search=) or [packagist](https://packagist.org/packages/nielsdeblaauw/query-monitor-twig-profile).
+
+You can also download specific releases and the development version from [GitHub](https://github.com/NielsdeBlaauw/query-monitor-twig-profile/releases).
+
 == Frequently Asked Questions ==
 # Can I use it with other frameworks that use twig?
 Definitely. Just add a twig profiler extension to your twig instance and submit it to the collector.
 
-```
+`
 if ( function_exists( 'NdB\QM_Twig_Profile\collect' ) ) {
 	$twig = \NdB\QM_Twig_Profile\collect( $twig );
 }
-```
+`
 
 = Privacy Statement =
 Query Monitor Twig Profile is private by default and always will be. It does not persistently store any of the data that it collects. It does not send data to any third party, nor does it include any third party resources.
@@ -39,7 +50,7 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 2. The Twig profile tab in Query Monitor (dark mode)
 
 == Changelog ==
-next
+1.1.0
 * Support for dark mode.
 * Support direct links to the templates in the editor.
 * Makes it easier to profile a custom Twig instance.
@@ -60,3 +71,7 @@ next
 
 1.0.0:
 * Initial release.
+
+== Development ==
+
+This open source tool is developed in a public [GitHub repository](https://github.com/NielsdeBlaauw/query-monitor-twig-profile). If you have any feature requests, found an issue or want to contribute check out the repository.
