@@ -58,6 +58,22 @@ add_filter( 'qm/outputter/html', 'NdB\QM_Twig_Profile\render' );
  * @return \Twig\Environment
  */
 function collect_timber( Environment $twig ):Environment {
+	return collect( $twig );
+}
+
+add_filter( 'timber/twig', 'NdB\QM_Twig_Profile\collect_timber' );
+
+/**
+ * Adds twig profile collection to a Twig instance.
+ *
+ * @param \Twig\Environment $twig A Twig instance.
+ * @return \Twig\Environment
+ */
+function collect( Environment $twig ):Environment {
+	if ( ! class_exists( 'QM_Collectors' ) ) {
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Attempted to profile a Twig instance without Query Monitor available. Enable Query Monitor first.', 'ndb_qm_twig' ), '1.1.0' );
+		return $twig;
+	}
 	$profile             = new Profile();
 	$environment_profile = new Environment_Profile( $twig, $profile );
 	$twig->addExtension( new ProfilerExtension( $profile ) );
@@ -67,5 +83,3 @@ function collect_timber( Environment $twig ):Environment {
 	}
 	return $twig;
 }
-
-add_filter( 'timber/twig', 'NdB\QM_Twig_Profile\collect_timber' );
