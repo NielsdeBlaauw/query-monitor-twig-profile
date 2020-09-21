@@ -26,11 +26,8 @@ Automatically integrates with Timber.
 Definitely. Just add a Twig profiler extension to your Twig instance and submit it to the collector.
 
 ```php
-$profile = new \Twig\Profiler\Profile();
-$twig->addExtension( new \Twig\Extension\ProfilerExtension( $profile ) );
-$collector = \QM_Collectors::get( 'twig_profile' );
-if ( $collector instanceof \NdB\QM_Twig_Profile\Collector ) {
-	$collector->add( $profile );
+if ( function_exists( 'NdB\QM_Twig_Profile\collect' ) ) {
+	$twig = \NdB\QM_Twig_Profile\collect( $twig );
 }
 ```
 

@@ -18,19 +18,16 @@ Automatically integrates with Timber.
 == Installation ==
 1. Install the plugin.
 2. Activate it.
-3. Check the \'Twig profile\' tab in Query Monitor.
-4. Optimize your site.
+3. Check the 'Twig profile' tab in Query Monitor.
+4. Speed up your site!
 
 == Frequently Asked Questions ==
 # Can I use it with other frameworks that use twig?
 Definitely. Just add a twig profiler extension to your twig instance and submit it to the collector.
 
 ```
-$profile = new \Twig\Profiler\Profile();
-$twig->addExtension( new \Twig\Extension\ProfilerExtension( $profile ) );
-$collector = \QM_Collectors::get( 'twig_profile' );
-if ( $collector instanceof \NdB\QM_Twig_Profile\Collector ) {
-	$collector->add( $profile );
+if ( function_exists( 'NdB\QM_Twig_Profile\collect' ) ) {
+	$twig = \NdB\QM_Twig_Profile\collect( $twig );
 }
 ```
 
@@ -45,6 +42,7 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 next
 * Support for dark mode.
 * Support direct links to the templates in the editor.
+* Makes it easier to profile a custom Twig instance.
 
 1.0.3
 * Removes assets release library.
