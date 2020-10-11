@@ -7,8 +7,6 @@
 
 namespace NdB\QM_Twig_Profile;
 
-use Twig\Profiler\Profile;
-
 /**
  * The Twig Profile collector.
  */

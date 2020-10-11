@@ -8,6 +8,7 @@
 namespace NdB\QM_Twig_Profile;
 
 use QM_Output_Html;
+use Twig\Profiler\Dumper\BlackfireDumper;
 use Twig\Profiler\Dumper\Dumper;
 
 /**
@@ -69,11 +70,13 @@ final class Output extends QM_Output_Html {
 				echo '</div>';
 			} else {
 				require_once 'class-dumper.php';
-				foreach ( $environment_profiles as $environment_profile ) {
+				foreach ( $environment_profiles as $index => $environment_profile ) {
 					echo '<div class="qm-boxed">';
 					echo '<section>';
 					$dumper = new Dumper( $environment_profile->environment->getLoader() );
 					echo wp_kses( $dumper->dump( $environment_profile->profile ), wp_kses_allowed_html( 'post' ), self::EDITOR_PROTOCOLS );
+					$blackfire_dumper = new BlackfireDumper();
+					echo '<button onclick="window.qm_twig_profile.save(\'twig-profile-' . (int) $index . '-' . (int) time() . '.prof\', \'' . esc_js( $blackfire_dumper->dump( $environment_profile->profile ) ) . '\')">' . esc_html__( 'Download blackfire.io profile', 'ndb_qm_twig' ) . '</button>';
 					echo '</section>';
 					echo '</div>';
 				}
