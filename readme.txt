@@ -4,7 +4,7 @@ Tags: timber, twig, query monitor, performance, profile, speed, template, theme,
 Requires at least: 4.9.0
 Tested up to: 5.5.1
 Requires PHP: 7.0
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
@@ -21,6 +21,7 @@ Automatically integrates with Timber.
 
 - Support for dark mode.
 - Clickable links to profiled templates in your preferred editor.
+- Downloadable blackfire.io profiles.
 
 == Installation ==
 1. Install the plugin.
@@ -50,6 +51,9 @@ Query Monitor Twig Profile is private by default and always will be. It does not
 2. The Twig profile tab in Query Monitor (dark mode)
 
 == Changelog ==
+1.2.0
+* Adds blackfire.io profile downloads.
+
 1.1.0
 * Support for dark mode.
 * Support direct links to the templates in the editor.

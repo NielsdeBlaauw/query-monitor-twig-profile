@@ -7,7 +7,6 @@
 
 namespace Twig\Profiler\Dumper;
 
-use NdB\QM_Twig_Profile\Output;
 use QM_Output_Html;
 use Twig\Loader\LoaderInterface;
 use Twig\Profiler\Profile;
