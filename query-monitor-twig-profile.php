@@ -90,6 +90,9 @@ function collect( Environment $twig ):Environment {
  * @return void
  */
 function enqueue_scripts() {
+	if ( ! function_exists( 'get_plugin_data' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
 	$plugin_data = get_plugin_data( __FILE__ );
 	wp_enqueue_script( 'qm-twig-profile', plugin_dir_url( __FILE__ ) . 'assets/save.js', array(), $plugin_data['Version'], false );
 }
