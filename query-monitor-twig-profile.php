@@ -95,6 +95,7 @@ function enqueue_scripts() {
 	}
 	$plugin_data = get_plugin_data( __FILE__ );
 	wp_enqueue_script( 'qm-twig-profile', plugin_dir_url( __FILE__ ) . 'assets/save.js', array(), $plugin_data['Version'], false );
+	wp_enqueue_script( 'qm-twig-profile-component', plugin_dir_url( __FILE__ ) . 'assets/twig-profile/dist/twig-profile.js', array(), $plugin_data['Version'], false );
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts', 110 );

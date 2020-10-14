@@ -10,6 +10,7 @@ namespace NdB\QM_Twig_Profile;
 use QM_Output_Html;
 use Twig\Profiler\Dumper\BlackfireDumper;
 use Twig\Profiler\Dumper\Dumper;
+use Twig\Profiler\Dumper\JSONDumper;
 
 /**
  * Formats the output data for a QM panel.
@@ -69,12 +70,17 @@ final class Output extends QM_Output_Html {
 				echo '</section>';
 				echo '</div>';
 			} else {
-				require_once 'class-dumper.php';
+				$qm_dark_mode='light';
+				if(defined('QM_DARK_MODE') && constant('QM_DARK_MODE')){
+					$qm_dark_mode='dark';
+				}
+				require_once 'class-json-dumper.php';
 				foreach ( $environment_profiles as $index => $environment_profile ) {
 					echo '<div class="qm-boxed">';
 					echo '<section>';
-					$dumper = new Dumper( $environment_profile->environment->getLoader() );
-					echo wp_kses( $dumper->dump( $environment_profile->profile ), wp_kses_allowed_html( 'post' ), self::EDITOR_PROTOCOLS );
+					$dumper = new JSONDumper( $environment_profile->environment->getLoader() );
+					// echo esc_html( $dumper->dump( $environment_profile->profile ) );
+					echo '<twig-profile qm_dark_mode="'.$qm_dark_mode.'" profile=\'' . $dumper->dump( $environment_profile->profile ) . '\'"></twig-profile>';
 					$blackfire_dumper = new BlackfireDumper();
 					echo '<button onclick="window.qm_twig_profile.save(\'twig-profile-' . (int) $index . '-' . (int) time() . '.prof\', \'' . esc_js( $blackfire_dumper->dump( $environment_profile->profile ) ) . '\')">' . esc_html__( 'Download blackfire.io profile', 'ndb_qm_twig' ) . '</button>';
 					echo '</section>';
