@@ -28,12 +28,24 @@ export default {
 </script>
 
 <style>
+.twig-profile{
+  font-size: 16px;
+  line-height: 25px;
+}
+
 .twig-profile--light{
   --text-color: #000;
   --link-color: blue;
+  --alert-color: #a00;
+  --warning-color: #b33000;
+  --muted-color: #333;
 }
+
 .twig-profile--dark{
   --text-color: #fff;
   --link-color: cyan;
+  --alert-color: #f88;
+  --warning-color: #ff4;
+  --muted-color: #bbb;
 }
 </style>

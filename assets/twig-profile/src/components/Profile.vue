@@ -44,15 +44,17 @@ export default {
 }
 
 .profile__duration--medium{
-    color: orange;
+    color: var(--warning-color);
+    font-style: italic;
 }
 
 .profile__duration--high{
-    color: red;
+    color: var(--alert-color);
+    font-weight: bold;
 }
 
 .profile__duration--low{
-    opacity: 0.6;
+    color: var(--muted-color);
 }
 
 .profile__children{
@@ -70,6 +72,6 @@ export default {
     background-color: var(--text-color);
     width: 0.8em;
     display: block;
-    top: 0.5rem;
+    top: 0.8rem;
 }
 </style>
