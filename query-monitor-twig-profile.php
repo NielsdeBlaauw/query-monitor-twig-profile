@@ -62,6 +62,7 @@ function collect_timber( Environment $twig ):Environment {
 }
 
 add_filter( 'timber/twig', __NAMESPACE__ . '\\collect_timber' );
+add_filter( 'clarkson_twig_environment', __NAMESPACE__ . '\\collect_timber' );
 
 /**
  * Adds twig profile collection to a Twig instance.
