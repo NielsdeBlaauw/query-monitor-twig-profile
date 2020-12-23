@@ -17,6 +17,7 @@ jobs:
         cd assets/twig-profile/ 
         npm ci
         npm run build
+        rm -rf node_modules
     - name: WordPress Plugin Deploy
       id: deploy
       uses: 10up/action-wordpress-plugin-deploy@stable

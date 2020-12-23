@@ -4,7 +4,7 @@ Tags: timber, twig, query monitor, performance, profile, speed, template, theme,
 Requires at least: 4.9.0
 Tested up to: 5.6.0
 Requires PHP: 7.0
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
@@ -52,6 +52,9 @@ Query Monitor Twig Profile data is private by default and always will be. It doe
 2. The Twig profile tab in Query Monitor (light mode)
 
 == Changelog ==
+1.3.1
+* Maintenance: Do not upload the `node_modules` folder of webcomponent to the plugin repository.
+
 1.3.0
 * Adds history mode. Save your profiles and view them later to see the impact of your changes. Compare profiles over multiple pages, and more.
 * Automatically integrates with clarkson-core:^1.0
