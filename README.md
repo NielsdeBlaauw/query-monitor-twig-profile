@@ -18,6 +18,7 @@ Automatically integrates with Timber.
 - Support for dark mode.
 - Clickable links to profiled templates in your preferred editor.
 - Downloadable blackfire.io profiles.
+- History mode. Save profiles so you can see the impact of your changes.
 
 ## Installation
 
