@@ -54,6 +54,7 @@ Query Monitor Twig Profile data is private by default and always will be. It doe
 == Changelog ==
 1.3.0
 * Adds history mode. Save your profiles and view them later to see the impact of your changes. Compare profiles over multiple pages, and more.
+* Automatically integrates with clarkson-core:^1.0
 
 1.2.0
 * Adds blackfire.io profile downloads.

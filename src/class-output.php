@@ -64,7 +64,7 @@ final class Output extends QM_Output_Html {
 				echo '<div class="qm-boxed">';
 				echo '<section>';
 				?>
-				<p><?php echo esc_html__( 'No twig profiles on this page :)', 'ndb_qm_twig' ); ?></p>
+				<p><?php echo esc_html__( 'No twig profiles on this page :) If you are using twig on this page, check out the README to find out how to capture profiling information.', 'ndb_qm_twig' ); ?></p>
 				<?php
 				echo '</section>';
 				echo '</div>';
