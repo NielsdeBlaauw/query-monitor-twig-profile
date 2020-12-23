@@ -58,35 +58,46 @@ final class JSONDumper extends BaseDumper {
 	 * @param Profile $profile The twig profile to dump.
 	 */
 	public function dump( Profile $profile ):string {
-		
-		return json_encode($this->extract_data($profile));
-		// return '<pre>' . parent::dump( $profile ) . '</pre>';
+		$result = wp_json_encode( $this->extract_data( $profile ) );
+		if ( ! $result ) {
+			return '';
+		}
+		return $result;
 	}
 
-	public function extract_data(Profile $profile){
+	/**
+	 * Format profile information into a usable format
+	 *
+	 * @param Profile $profile The twig profile to dump.
+	 * @return array<mixed>
+	 */
+	public function extract_data( Profile $profile ):array {
 		$child_profiles = array();
-		foreach($profile->getProfiles() as $child_profile){
-			$child_profiles[] = $this->extract_data($child_profile);
+		foreach ( $profile->getProfiles() as $child_profile ) {
+			$child_profiles[] = $this->extract_data( $child_profile );
 		}
 		return array(
-			'type' => $profile->getType(),
-			'file' => $this->get_template_name($profile),
-			'name' => $profile->getName(),
-			'duration' => $profile->getDuration(),
-			'memory_usage' => $profile->getMemoryUsage(),
+			'type'              => $profile->getType(),
+			'file'              => $this->get_template_name( $profile ),
+			'name'              => $profile->getName(),
+			'duration'          => $profile->getDuration(),
+			'memory_usage'      => $profile->getMemoryUsage(),
 			'peak_memory_usage' => $profile->getPeakMemoryUsage(),
-			'profiles'=>$child_profiles
+			'profiles'          => $child_profiles,
 		);
 	}
 
-	public function get_template_name(Profile $profile): string{
-		if ($profile->isRoot()) {
-			return $profile->getName();
-		} else {
-			if ($profile->isTemplate()) {
-				return $this->formatTemplate($profile, '');
+	/**
+	 * Retrieve a human readable template name.
+	 *
+	 * @param Profile $profile The twig profile to dump.
+	 */
+	public function get_template_name( Profile $profile ): string {
+		if ( ! $profile->isRoot() ) {
+			if ( $profile->isTemplate() ) {
+				return $this->formatTemplate( $profile, '' );
 			} else {
-				return $this->formatNonTemplate($profile, '');
+				return $this->formatNonTemplate( $profile, '' );
 			}
 		}
 		return $profile->getName();
