@@ -50,5 +50,5 @@ Test the GitHub Actions workflow with [act](https://github.com/nektos/act):
 See the documentation for the [setup-php action](https://github.com/marketplace/actions/setup-php-action#local-testing-setup)
 
 ```shell
-act -P ubuntu-latest=shivammathur/node:latest
+./bin/act pull_request -P ubuntu-latest=shivammathur/node:latest
 ```

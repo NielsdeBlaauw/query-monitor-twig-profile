@@ -3,7 +3,11 @@
     "description": "Displays Twig profiler output in Query Monitor",
     "type": "wordpress-plugin",
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "repositories":[
         {
@@ -25,7 +29,7 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "phpcompatibility/php-compatibility": "^9.3",
-        "szepeviktor/phpstan-wordpress": "^0.7.1",
+        "szepeviktor/phpstan-wordpress": "^1.0",
         "twig/twig": "^3.0",
         "wp-coding-standards/wpcs": "^2.3",
         "wpackagist-plugin/query-monitor": "^3.6"
