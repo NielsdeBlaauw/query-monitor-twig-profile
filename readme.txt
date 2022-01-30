@@ -54,6 +54,7 @@ Query Monitor Twig Profile data is private by default and always will be. It doe
 == Changelog ==
 1.3.2
 * Maintenance: Tested up to WordPress 5.9.
+* Maintenance: Update asset build dependencies
 
 
 1.3.1
