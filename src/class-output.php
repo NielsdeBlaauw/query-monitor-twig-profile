@@ -81,6 +81,7 @@ final class Output extends QM_Output_Html {
 					echo '<twig-profile qm_dark_mode="' . esc_html( $qm_dark_mode ) . '" profile=\'' . esc_html( $dumper->dump( $environment_profile->profile ) ) . '\'"></twig-profile>';
 					$blackfire_dumper = new BlackfireDumper();
 					echo '<button onclick="window.qm_twig_profile.save(\'twig-profile-' . (int) $index . '-' . (int) time() . '.prof\', \'' . esc_js( $blackfire_dumper->dump( $environment_profile->profile ) ) . '\')">' . esc_html__( 'Download blackfire.io profile', 'ndb_qm_twig' ) . '</button>';
+					echo '<div><a href="https://actd.nl/topics/query-monitor-twig-profile/?utm_source=qmtp&utm_medium=in_plugin&utm_campaign=documentation">' . esc_html__( 'Knowledge base and documentation', 'ndb_qm_twig' ) . '</a></div>';
 					echo '</section>';
 					echo '</div>';
 				}

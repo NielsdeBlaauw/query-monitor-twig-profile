@@ -56,6 +56,7 @@ Query Monitor Twig Profile data is private by default and always will be. It doe
 * Maintenance: Tested up to WordPress 5.9.
 * Maintenance: Update asset build dependencies.
 * Maintenance: Updates PHP dependencies.
+* Maintenance: Adds link to extended documentation.
 
 1.3.1
 * Maintenance: Do not upload the `node_modules` folder of webcomponent to the plugin repository.
