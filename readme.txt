@@ -2,9 +2,9 @@
 Contributors: nielsdeblaauw
 Tags: timber, twig, query monitor, performance, profile, speed, template, theme, developer, development, debug
 Requires at least: 4.9.0
-Tested up to: 5.9.0
+Tested up to: 6.0.0
 Requires PHP: 7.0
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: MIT
 License URI: https://raw.githubusercontent.com/NielsdeBlaauw/query-monitor-twig-profile/master/LICENSE
 
@@ -50,6 +50,11 @@ Query Monitor Twig Profile data is private by default and always will be. It doe
 == Screenshots ==
 1. The Twig profile tab in Query Monitor (dark mode)
 2. The Twig profile tab in Query Monitor (light mode)
+
+== Changelog ==
+1.3.4
+* Maintenance: Asset updates.
+* Maintenance: WordPress 6.0 compatibility check.
 
 == Changelog ==
 1.3.3
