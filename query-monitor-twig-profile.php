@@ -15,6 +15,7 @@
 namespace NdB\QM_Twig_Profile;
 
 use QM_Collectors;
+use QM_Dispatcher;
 use Twig\Environment;
 use Twig\Extension\ProfilerExtension;
 use Twig\Profiler\Profile;
@@ -91,6 +92,9 @@ function collect( Environment $twig ):Environment {
  * @return void
  */
 function enqueue_scripts() {
+	if ( ! QM_Dispatcher::user_can_view() ) {
+		return;
+	}
 	if ( ! function_exists( 'get_plugin_data' ) ) {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 	}
